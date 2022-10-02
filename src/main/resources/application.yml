@@ -1,0 +1,42 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: test
+
+---
+server:
+  port: 8001
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+server:
+  port: 8002
+spring:
+  config:
+    activate:
+      on-profile: test
+
+person:
+  name: weibin
+  age: ${random.int}
+  happy: true
+  birth: 1995/11/12
+  hello: hello
+  maps: {k1: v1, k2: v2}
+  lists:
+    - code
+    - music
+    - girls
+  dog:
+    name: ${person.hello:hello}_puppy
+    age: 3
+
+student:
+  name: weibin.sun@ufl.edu
+  age: 26
+
+
+
